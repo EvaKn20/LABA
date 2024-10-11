@@ -175,7 +175,6 @@ h1 {
 
 .color-button.selected {
     border: 3px solid #000080; /* Цвет границы при выделении */
-    background-color: #000080; /* Цвет фона при выделении */
     
 }
 
