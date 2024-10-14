@@ -51,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (currentTime - lastTouchTime < 300) {
         stickyElement = event.target;
         isSticky = true;
-        stickyElement.style.backgroundColor = 'rgb(226, 226, 226)'; // Меняем цвет на светло-серый
       }
   
       lastTouchTime = currentTime;
@@ -61,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function onSingleClickOrTouch(event) {
       if (isSticky && stickyElement) {
         isSticky = false;
-        stickyElement.style.backgroundColor = 'red'; // Возвращаем цвет
         stickyElement = null;
       }
     }
@@ -78,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isSticky && stickyElement) {
           stickyElement.style.left = initialPosition.x;
           stickyElement.style.top = initialPosition.y;
-          stickyElement.style.backgroundColor = 'red'; // Возвращаем цвет
           isSticky = false;
           stickyElement = null;
         }
@@ -98,8 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
       target.addEventListener('touchstart', onStart);
       target.addEventListener('touchmove', onMove);
       target.addEventListener('touchend', onEnd);
-      target.addEventListener('touchstart', onDoubleClickOrTouch); // Обрабатываем двойное касание
-      target.addEventListener('touchstart', onSingleClickOrTouch); // Обрабатываем одиночное касание
+      target.addEventListener('touchstart', onDoubleClickOrTouch); 
+      target.addEventListener('touchstart', onSingleClickOrTouch); 
     });
   
     // Слушаем сенсорные события для возврата при касании двумя пальцами
@@ -118,7 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isSticky && stickyElement) {
           stickyElement.style.left = initialPosition.x;
           stickyElement.style.top = initialPosition.y;
-          stickyElement.style.backgroundColor = 'red'; // Возвращаем цвет
           isSticky = false;
           stickyElement = null;
         }
